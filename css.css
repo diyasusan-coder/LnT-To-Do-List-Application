@@ -1,0 +1,504 @@
+/* Dark Theme Color Palette:
+    Background: #2A2F36
+    Primary Text: #EAEAEA (Ice White)
+    Accent: #00FFFF (Electric Blue)
+    Highlight: #9D00FF (Neon Purple)
+    Completed Task: #708090 (Slate Gray)
+*/
+
+body {
+    min-height: 100vh;
+    background-color: #2A2F36;
+    font-family: 'Poppins', sans-serif;
+    color: #EAEAEA;
+}
+
+.header-bar {
+    background-color: #1a1e24; /* A slightly darker shade for the header */
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-left h1 {
+    color: #EAEAEA;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+}
+
+.logo-icon {
+    width: 35px;
+    height: 35px;
+    fill: #9D00FF; /* Using Neon Purple for the logo */
+}
+
+.header-nav .nav-pills .nav-link {
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    color: #00FFFF; /* Electric Blue for links */
+}
+
+.header-nav .nav-pills .nav-link:hover {
+    transform: translateY(-3px);
+    background-color: #00FFFF;
+    color: #2A2F36;
+}
+
+.header-nav .nav-pills .nav-link.active {
+    background: #9D00FF;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card {
+    background-color: #333842;
+    border: 1px solid #454d58;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    color: #EAEAEA;
+}
+
+.card-header-title {
+    color: #9D00FF;
+}
+
+/* Dashboard Preview Cards */
+.preview-card {
+    background-color: #3f4651;
+    min-height: 150px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.preview-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+.preview-card h5 {
+    font-weight: 600;
+    color: #00FFFF;
+}
+.preview-card .card-body {
+    padding: 1rem;
+}
+.preview-card-content {
+    font-size: 0.9em;
+    color: #EAEAEA;
+}
+.preview-card .bi {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: #00FFFF;
+}
+
+/* Pawxel styles */
+#pawxelToggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #9D00FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    z-index: 1050;
+    transition: transform 0.2s ease;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+#pawxelToggle:hover {
+    transform: scale(1.1);
+}
+
+#pawxelChat {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 320px;
+    max-height: 420px;
+    background: #333842;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1100;
+    color: #EAEAEA;
+}
+
+#pawxelHeader {
+    background: #1a1e24;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #EAEAEA;
+}
+
+#pawxelHeader h6 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.cat-avatar {
+    width: 40px;
+    height: 40px;
+}
+
+#pawxelWindow {
+    flex-grow: 1;
+    padding: 12px;
+    overflow-y: auto;
+    background: #2a2f36;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-bubble {
+    max-width: 75%;
+    padding: 10px 14px;
+    border-radius: 18px;
+    margin: 6px 0;
+    position: relative;
+}
+
+.chat-user {
+    background: #00FFFF;
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+    color: #2A2F36;
+}
+
+.chat-user::after {
+    content: "";
+    position: absolute;
+    right: -8px;
+    bottom: 0;
+    border-width: 8px 0 0 8px;
+    border-style: solid;
+    border-color: #00FFFF transparent;
+}
+
+.chat-bot {
+    background: #9D00FF;
+    color: white;
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+}
+
+.chat-bot::after {
+    content: "";
+    position: absolute;
+    left: -8px;
+    bottom: 0;
+    border-width: 8px 8px 0 0;
+    border-style: solid;
+    border-color: #9D00FF transparent;
+}
+
+#pawxelForm {
+    display: flex;
+    padding: 8px;
+    gap: 6px;
+    border-top: 1px solid #454d58;
+}
+
+#pawxelForm input {
+    flex-grow: 1;
+    background-color: #2a2f36;
+    border: 1px solid #454d58;
+    color: #EAEAEA;
+}
+
+#pawxelForm input::placeholder {
+    color: #708090;
+}
+
+#pawxelForm button {
+    background: #00FFFF;
+    color: #2A2F36;
+    border: none;
+}
+
+/* Task list styles */
+.task-input-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#taskInput, #taskDueDatetime {
+    background-color: #2a2f36;
+    border-radius: 50px;
+    padding: 10px 20px;
+    border: 1px solid #454d58;
+    flex-grow: 1;
+    color: #EAEAEA;
+}
+
+#taskInput::placeholder, #taskDueDatetime::placeholder {
+    color: #708090;
+}
+
+#addTaskBtn {
+    border-radius: 50px;
+    background: #9D00FF;
+    border: none;
+    color: white;
+    transition: all 0.2s ease;
+}
+#addTaskBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.filters button {
+    border-radius: 50px;
+    margin-right: 5px;
+    font-weight: 500;
+    background-color: #3f4651;
+    border: 1px solid #454d58;
+    color: #EAEAEA;
+}
+
+.filters button.active {
+    background-color: #00FFFF;
+    color: #2A2F36;
+    border-color: #00FFFF;
+}
+
+.task-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #3f4651;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    border-left: 5px solid #00FFFF;
+    transition: all 0.3s ease;
+    cursor: move; /* Drag cursor */
+}
+
+.task-list-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.task-list-item.completed {
+    background-color: #708090;
+    border-left: 5px solid #9D00FF;
+    color: #2A2F36;
+    text-decoration: line-through;
+}
+
+.task-list-item.completed .task-due-date {
+    color: #333;
+}
+
+.task-content {
+    flex-grow: 1;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    color: #EAEAEA;
+}
+
+.task-list-item.completed .task-content {
+    color: #333;
+}
+
+.task-content .task-text {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.task-content .task-due-date {
+    font-size: 0.8rem;
+    color: #B0B0B0;
+    margin-top: 4px;
+}
+
+.task-actions button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #B0B0B0;
+    transition: color 0.2s ease;
+    margin-left: 10px;
+}
+
+.task-actions button:hover {
+    color: #EAEAEA;
+}
+
+.task-actions .edit-btn:hover {
+    color: #9D00FF;
+}
+
+.task-actions .delete-btn:hover {
+    color: #00FFFF;
+}
+
+/* Calendar page specific styles */
+.calendar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+.calendar-nav button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #00FFFF;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.calendar-nav button:hover {
+    transform: scale(1.1);
+}
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    text-align: center;
+}
+.calendar-day-header {
+    font-weight: bold;
+    color: #9D00FF;
+}
+.calendar-day-box {
+    background-color: #3f4651;
+    padding: 10px 5px;
+    border-radius: 8px;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #454d58;
+    color: #EAEAEA;
+}
+.calendar-day-box.has-tasks {
+    background-color: #00FFFF;
+    color: #2A2F36;
+    border-color: #00FFFF;
+    position: relative;
+    overflow: hidden;
+}
+.calendar-day-box.has-tasks::after {
+    content: "•";
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 2em;
+    color: #2A2F36;
+    line-height: 1;
+}
+.calendar-day-box .day-number {
+    font-weight: bold;
+}
+.calendar-day-box.empty-day {
+    background-color: #2a2f36;
+    color: #555;
+    border: 1px solid #3f4651;
+}
+
+/* Progress page specific styles */
+.progress-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.progress-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(#00FFFF var(--percentage), #3f4651 var(--percentage));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.progress-inner-circle {
+    width: 120px;
+    height: 120px;
+    background-color: #333842;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.progress-percentage {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #00FFFF;
+    font-family: 'Roboto Mono', monospace;
+}
+.progress-label {
+    font-size: 0.9rem;
+    color: #B0B0B0;
+}
+.progress-stats {
+    text-align: center;
+}
+.progress-stats h4 {
+    font-weight: 500;
+}
+.progress-stats p {
+    color: #EAEAEA;
+}
+
+/* Weekly Report page specific styles */
+.report-list .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: none;
+    border-bottom: 1px solid #454d58;
+    transition: background-color 0.2s ease;
+    background-color: #333842;
+    color: #EAEAEA;
+}
+.report-list .list-group-item:first-child {
+    border-top: 1px solid #454d58;
+}
+.report-list .list-group-item:hover {
+    background-color: #3f4651;
+}
+.report-title {
+    font-weight: 500;
+}
+.report-date {
+    font-size: 0.9em;
+    color: #B0B0B0;
+}
